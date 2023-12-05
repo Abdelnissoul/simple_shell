@@ -3,9 +3,8 @@
 /**
  * read_line - this function is gonna read the line and print it as command
  * this will be done using getline function
- * ac: argument count
- * av: argument vector
- * Return: 0
+ * 
+ * Return: the input of the user that will write
  */
 int read_line(void)
 {

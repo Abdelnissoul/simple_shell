@@ -3,7 +3,8 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "\"C:\\Users\\admin\\simple_shell"
             ],
             "defines": [
                 "_DEBUG",
@@ -11,7 +12,7 @@
                 "_UNICODE"
             ],
             "cStandard": "gnu23",
-            "compilerPath": "c:/Users/admin/simple_shell.c"
+            "compilerPath": "c:/Users/admin/test.c"
         },
         {
             "name": "header",

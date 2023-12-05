@@ -21,6 +21,7 @@ int main(int ac, char **av)
 		input = read_line();
 		if (input == NULL)
 		{
+			write(STDOUT_FILENO, "\n", 1);
 			return (position);
 		}
 		printf("lets see if it works: %s", input);

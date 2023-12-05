@@ -15,7 +15,7 @@ char *read_line(void)
 	write(STDOUT_FILENO, "$ ", 2);
 	x = getline(&input, &length, stdin);
 	
-	if (x == EOF)
+	if (x == (size_t)EOF)
 	{
 		free(input);
 		return (NULL);

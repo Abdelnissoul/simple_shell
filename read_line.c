@@ -6,13 +6,13 @@
  * 
  * Return: the input of the user that will write
  */
-int read_line(void)
+char *read_line(void)
 {
 	char *input = NULL;
 	size_t length = 0;
 	size_t x;
 
-	write(STDOUT_FILNO, "$ "; 2);
+	write(STDOUT_FILENO, "$ ", 2);
 	x = getline(&input, &length, stdin);
 	
 	if (x == EOF)

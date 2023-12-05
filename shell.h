@@ -15,4 +15,12 @@
 char *read_line(void);
 char **split_token(char *);
 
+/*for strings functions */
+int _strlen(char *);
+int _strcmp(char *, char *);
+char *_strcat(char *, char *);
+char *_strcpy(char *, char *);
+char *_strdup(const char *);
+
+
 #endif

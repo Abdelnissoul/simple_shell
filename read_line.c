@@ -12,9 +12,13 @@ char *read_line(void)
 	size_t length = 0;
 	size_t x;
 
-	write(STDOUT_FILENO, "$ ", 2);
+	if (isatty(STDIN_FILENO) != 0)/* this is for non-interactive mode */
+	{
+		write(STDOUT_FILENO, "$ ", 2);
+	}
+
 	x = getline(&input, &length, stdin);
-	
+
 	if (x == (size_t)EOF)
 	{
 		free(input);

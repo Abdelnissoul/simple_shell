@@ -13,7 +13,7 @@
 #include <errno.h>
 
 char *read_line(void);
-char **split_token(char *);
+char **split_token(char *input);
 
 /*for strings functions */
 int _strlen(char *);

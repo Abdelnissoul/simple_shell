@@ -23,27 +23,42 @@ char **split_token(char *input)
 
 	dup = _strdup(input);
 	tokens = strtok(input, " \t\n");
-	
+
+	if (tokens == NULL)
+	{
+		free(input);
+		input = NULL;
+		free(dup);
+		dup = NULL;
+		return (NULL);
+	}
+
 	for (count = 0; tokens; count++)
 	{
 		tokens = strtok(NULL, " \t\n");
 	}
+
 	free(input);
+	input = NULL;
+
 	buffer = malloc(sizeof(char *) * (count + 1));
 	if (!buffer)
 	{
-		free(input);
+		free(input), input = NULL;
 		return (NULL);
 	}
 
 	tokens = strtok(input, " \t\n");
-	
+
 	while (tokens)
 	{
-		buffer[a++] = tokens;
+		buffer[a] = _strdup(tokens);
 		tokens = strtok(NULL, " \t\n");
+		a = a + 1;
 	}
+
 	free(input);
+	input = NULL;
 	buffer [a] = NULL;
 
 	return (buffer);

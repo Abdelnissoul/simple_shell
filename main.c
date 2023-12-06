@@ -11,6 +11,7 @@ int main(int ac, char **av)
 	int position;
 	char *input = NULL;
 	char **buffer = NULL;
+	int i;
 	(void)ac;
 	(void)av;
 
@@ -29,7 +30,15 @@ int main(int ac, char **av)
 		}
 
 		buffer = split_token(input);
+		if (buffer == NULL)
+		{
+			continue;
+		}
 		
+		for (i = 0; buffer[i]; i++)
+		{
+			printf("this for testing %s\n", buffer);
+		}
 		/*position = _implement(buffer, av); */
 	}
 }

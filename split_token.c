@@ -33,8 +33,9 @@ char **split_token(char *input)
 		return (NULL);
 	}
 
-	for (count = 0; tokens; count++)
+	while (tokens)
 	{
+		count = count + 1;
 		tokens = strtok(NULL, " \t\n");
 	}
 

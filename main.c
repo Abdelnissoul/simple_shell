@@ -39,7 +39,7 @@ int main(int ac, char **av)
 		{
 			printf("%s\n", buffer[i]);
 			free(buffer[i]);
-			buffer = NULL;
+			buffer[i] = NULL;
 		}
 		free(buffer);
 		buffer = NULL;

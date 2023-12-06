@@ -22,7 +22,7 @@ char **split_token(char *input)
 	}
 
 	dup = _strdup(input);
-	tokens = strtok(input, " \t\n");
+	tokens = strtok(dup, " \t\n");
 
 	if (tokens == NULL)
 	{
@@ -38,13 +38,14 @@ char **split_token(char *input)
 		tokens = strtok(NULL, " \t\n");
 	}
 
-	free(input);
-	input = NULL;
+	free(dup);
+	dup = NULL;
 
 	buffer = malloc(sizeof(char *) * (count + 1));
 	if (!buffer)
 	{
-		free(input), input = NULL;
+		free(input);
+		input = NULL;
 		return (NULL);
 	}
 

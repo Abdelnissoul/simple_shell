@@ -43,6 +43,7 @@ int main(int ac, char **av)
 		}
 		free(buffer);
 		buffer = NULL;
+
 		/*position = _implement(buffer, av); */
 	}
 }

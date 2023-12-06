@@ -37,8 +37,12 @@ int main(int ac, char **av)
 		
 		for (i = 0; buffer[i]; i++)
 		{
-			printf("this for testing %s\n", buffer);
+			printf("%s\n", buffer[i]);
+			free(buffer[i]);
+			buffer = NULL;
 		}
+		free(buffer);
+		buffer = NULL;
 		/*position = _implement(buffer, av); */
 	}
 }

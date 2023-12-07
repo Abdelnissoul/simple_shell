@@ -17,7 +17,7 @@ char **split_token(char *input);
 int _implement(char **buffer, char **av);
 
 /* environ for execve */
-extern char **env;
+extern char **environ;
 
 /*for strings functions */
 int _strlen(char *);

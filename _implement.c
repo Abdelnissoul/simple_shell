@@ -11,7 +11,7 @@ int _implement(char **buffer, char **av)
 
 	if (fork_child == 0)
 	{
-		if (execve(buffer[0], buffer,env) == -1)
+		if (execve(buffer[0], buffer, environ) == -1)
 		{
 			perror(av[0]);
 			free(buffer[0]);

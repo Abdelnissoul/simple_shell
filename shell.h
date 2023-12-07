@@ -19,6 +19,9 @@ int _implement(char **buffer, char **av);
 /* environ for execve */
 extern char **environ;
 
+/* freeing 2d arrays */
+void free_2d(char **arr);
+
 /*for strings functions */
 int _strlen(char *);
 int _strcmp(char *, char *);

@@ -14,6 +14,10 @@
 
 char *read_line(void);
 char **split_token(char *input);
+int _implement(char **buffer, char **av);
+
+/* environ for execve */
+extern char **env;
 
 /*for strings functions */
 int _strlen(char *);

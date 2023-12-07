@@ -13,7 +13,6 @@ int main(int ac, char **av)
 	char **buffer = NULL;
 	int i;
 	(void)ac;
-	(void)av;
 
 	position = 0;
 
@@ -34,16 +33,17 @@ int main(int ac, char **av)
 		{
 			continue;
 		}
-		
+
 		for (i = 0; buffer[i]; i++)
 		{
-			printf("%s\n", buffer[i]);
 			free(buffer[i]);
 			buffer[i] = NULL;
 		}
 		free(buffer);
 		buffer = NULL;
 
-		/*position = _implement(buffer, av); */
+		position = _implement(buffer, av);
+
+
 	}
 }

@@ -13,7 +13,6 @@ int main(int ac, char **av)
 	int position;
 	char *input = NULL;
 	char **buffer = NULL;
-	int i;
 	(void)ac;
 
 	position = 0;
@@ -21,7 +20,7 @@ int main(int ac, char **av)
 	while (1)
 	{
 		input = read_line();
-		if (input == NULL)
+		if (!input)
 		{
 			if (isatty(STDIN_FILENO) != 0)
 			{
@@ -36,16 +35,7 @@ int main(int ac, char **av)
 			continue;
 		}
 
-		for (i = 0; buffer[i]; i++)
-		{
-			free(buffer[i]);
-			buffer[i] = NULL;
-		}
-		free(buffer);
-		buffer = NULL;
-
 		position = _implement(buffer, av);
-
 
 	}
 }

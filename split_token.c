@@ -4,7 +4,8 @@
  * split_token - function that takes only the token and split them
  * without considering spaces and tabs
  * @input: input line or message
- * Return: buffer where there is the command
+ *
+ * Return: buffer containing the tokens passed from input or NULL
  */
 
 char **split_token(char *input)

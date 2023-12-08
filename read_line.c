@@ -1,18 +1,20 @@
 #include "shell.h"
 
 /**
- * read_line - this function is gonna read the line and print it as command
+ * read_line - reads a line of input and displays a command prompt
  * this will be done using getline function
- * 
- * Return: the input of the user that will write
+ *
+ * Return: a pointer to the input string entered by user
+ * or NULL if EOF is encountered or an error occurs
  */
+
 char *read_line(void)
 {
 	char *input = NULL;
 	size_t length = 0;
 	size_t x;
 
-	if (isatty(STDIN_FILENO) != 0)/* this is for non-interactive mode */
+	if (isatty(STDIN_FILENO) != 0)/* checks if program is interactive mode */
 	{
 		write(STDOUT_FILENO, "$ ", 2);
 	}

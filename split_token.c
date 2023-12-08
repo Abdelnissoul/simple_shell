@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * split_token - function that takes only the token and split them 
+ * split_token - function that takes only the token and split them
  * without considering spaces and tabs
  * @input: input line or message
  * Return: 0 most probably
@@ -32,7 +32,6 @@ char **split_token(char *input)
 		dup = NULL;
 		return (NULL);
 	}
-
 	while (tokens)
 	{
 		count = count + 1;
@@ -49,19 +48,16 @@ char **split_token(char *input)
 		input = NULL;
 		return (NULL);
 	}
-
 	tokens = strtok(input, " \t\n");
-
 	while (tokens)
 	{
 		buffer[a] = _strdup(tokens);
 		tokens = strtok(NULL, " \t\n");
 		a = a + 1;
 	}
-
 	free(input);
 	input = NULL;
-	buffer [a] = NULL;
+	buffer[a] = NULL;
 
 	return (buffer);
 }

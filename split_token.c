@@ -1,8 +1,7 @@
 #include "shell.h"
 
 /**
- * split_token - function that takes only the token and split them
- * without considering spaces and tabs
+ * split_token -tokenizes input, separating tokens by spaces and tabs
  * @input: input line or message
  *
  * Return: buffer containing the tokens passed from input or NULL

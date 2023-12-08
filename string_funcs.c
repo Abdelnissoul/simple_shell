@@ -1,4 +1,5 @@
 #include "shell.h"
+
 /*
  * _strlen - returns length of a string
  * @str: the string to be checked
@@ -35,7 +36,7 @@ int _strcmp(char *str1, char *str2)
 		str2 = str2 + 1;
 	}
 	compare = (int)(*str1) - (int)(*str2);
-	
+
 	return (compare);
 }
 

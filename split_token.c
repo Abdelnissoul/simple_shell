@@ -12,7 +12,7 @@ char **split_token(char *input)
 	char **buffer = NULL;
 
 	if (!input)
-		return (NULL);}
+		return (NULL);
 	dup = _strdup(input);
 	tokens = strtok(dup, " \t\n");
 	if (tokens == NULL)

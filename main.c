@@ -2,9 +2,9 @@
 
 /**
  * main - entry point for the shell program
- * ac: argument count
- * av: argument vector
- * 
+ * @ac: argument count
+ * @av: argument vector
+ *
  * Return: Exit status (most probably 0)
  */
 

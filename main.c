@@ -1,11 +1,13 @@
 #include "shell.h"
+
 /**
- * main - this is the main code of the shell project
+ * main - entry point for the shell program
  * ac: argument count
  * av: argument vector
  * 
- * Return: 0 most probably
-*/
+ * Return: Exit status (most probably 0)
+ */
+
 int main(int ac, char **av)
 {
 	int position;

@@ -3,27 +3,20 @@
  * split_token - function that takes only the token and split them
  * without considering spaces and tabs
  * @input: input line or message
- * Return: 0 most probably
+ * Return: buffer where there is the command
 */
 char **split_token(char *input)
 {
-	int count;
-	char *tokens = NULL;
+	int count = 0, a = 0;
+	char *tokens = NULL, *dup = NULL;
 	char **buffer = NULL;
-	char *dup = NULL;
-	int a = 0;
-
-	count = 0;
-
 
 	if (!input)
 	{
 		return (NULL);
 	}
-
 	dup = _strdup(input);
 	tokens = strtok(dup, " \t\n");
-
 	if (tokens == NULL)
 	{
 		free(input);

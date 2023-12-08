@@ -12,9 +12,7 @@ char **split_token(char *input)
 	char **buffer = NULL;
 
 	if (!input)
-	{
-		return (NULL);
-	}
+		return (NULL);}
 	dup = _strdup(input);
 	tokens = strtok(dup, " \t\n");
 	if (tokens == NULL)
@@ -30,15 +28,13 @@ char **split_token(char *input)
 		count = count + 1;
 		tokens = strtok(NULL, " \t\n");
 	}
-
 	free(dup);
 	dup = NULL;
 
 	buffer = malloc(sizeof(char *) * (count + 1));
 	if (!buffer)
 	{
-		free(input);
-		input = NULL;
+		free(input), input = NULL;
 		return (NULL);
 	}
 	tokens = strtok(input, " \t\n");
@@ -51,6 +47,5 @@ char **split_token(char *input)
 	free(input);
 	input = NULL;
 	buffer[a] = NULL;
-
 	return (buffer);
 }

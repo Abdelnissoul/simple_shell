@@ -17,8 +17,7 @@ char **split_token(char *input)
 	tokens = strtok(dup, " \t\n");
 	if (tokens == NULL)
 	{
-		free(input);
-		input = NULL;
+		free(input), input = NULL;
 		free(dup);
 		dup = NULL;
 		return (NULL);

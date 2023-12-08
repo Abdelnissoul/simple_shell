@@ -1,9 +1,12 @@
 #include "shell.h"
+
 /**
  * free_2d - frees 2D array
  * @arr: array to be freed
+ *
  * Return: void
  */
+
 void free_2d(char **arr)
 {
 	int a;

@@ -26,5 +26,5 @@ int _implement(char **buffer, char **av)
 		waitpid(fork_child, &position, 0);
 		free_2d(buffer);
 	}
-	return(WEXITSTATUS(position));
+	return (WEXITSTATUS(position));
 }

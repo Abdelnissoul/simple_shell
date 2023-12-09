@@ -5,6 +5,7 @@
  * @str: the string to be checked
  * Return: length of the string, otherwise 0 (F)
  */
+
 int _strlen(char *str)
 {
 	int a = 0;
@@ -46,6 +47,7 @@ int _strcmp(char *str1, char *str2)
  * @src: the source
  * Return: pointer of destination.
  */
+
 char *_strcat(char *dest, char *src)
 {
 	char *ptr = dest;
@@ -62,12 +64,14 @@ char *_strcat(char *dest, char *src)
 
 	return (ptr);
 }
+
 /**
  * _strcpy - copy the string
  * @dest: destination
  * @src: source
  * Return: destination pointer
  */
+
 char *_strcpy(char *dest, char *src)
 {
 	int a;
@@ -91,6 +95,7 @@ char *_strcpy(char *dest, char *src)
  * @str: string ti be duplicated
  * Return: ptr of duplicated string
  */
+
 char *_strdup(const char *str)
 {
 	char *ptr;

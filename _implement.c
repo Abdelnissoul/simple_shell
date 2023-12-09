@@ -1,10 +1,12 @@
 #include "shell.h"
+
 /**
  * _implement - it will execute the program
  * @buffer: 2D array represent the command line
  * @av: 2d argument vector
  * Return: exit the position
-*/
+ */
+
 int _implement(char **buffer, char **av)
 {
 	pid_t fork_child;
@@ -26,5 +28,5 @@ int _implement(char **buffer, char **av)
 		waitpid(fork_child, &position, 0);
 		free_2d(buffer);
 	}
-	return(WEXITSTATUS(position));
+	return (WEXITSTATUS(position));
 }

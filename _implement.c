@@ -11,6 +11,7 @@ int _implement(char **buffer, char **av)
 {
 	pid_t fork_child;
 	int position;
+	int exit_position;
 
 	fork_child = fork();
 
@@ -28,5 +29,6 @@ int _implement(char **buffer, char **av)
 		waitpid(fork_child, &position, 0);
 		free_2d(buffer);
 	}
-	return (WEXITSTATUS(position));
+	exit_position = WEXITSTATUS(position);
+	return (exit_position);
 }

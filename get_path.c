@@ -1,10 +1,15 @@
 #include "shell.h"
 
+/**
+ * get_path - locates full path of an exec program
+ * @input: command or program to find
+ *
+ * Return: path of exec if found, or NULL
+ */
+
 char *get_path(char *input)
 {
-	char *env_path;
-	char *full_cmd;
-	char *dir;
+	char *env_path, *full_cmd, *dir;
 	int i;
 	struct stat st;
 
@@ -17,12 +22,12 @@ char *get_path(char *input)
 			return (NULL);
 		}
 	}
-	
+
 	env_path = _getenv("PATH");
-	
+
 	if (!env_path)
 		return (NULL);
-	
+
 	dir = strtok(env_path, ":");
 	while (dir)
 	{
@@ -38,11 +43,9 @@ char *get_path(char *input)
 				return (full_cmd);
 			}
 			free(full_cmd), full_cmd = NULL;
-			
 			dir = strtok(NULL, ":");
 		}
 	}
 	free(env_path);
 	return (NULL);
 }
-	

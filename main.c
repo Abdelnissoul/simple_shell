@@ -13,6 +13,7 @@ int main(int ac, char **av)
 	int position;
 	char *input = NULL;
 	char **buffer = NULL;
+	int idx = 0;
 	(void)ac;
 
 	position = 0;
@@ -23,19 +24,19 @@ int main(int ac, char **av)
 		if (!input)
 		{
 			if (isatty(STDIN_FILENO) != 0)
-			{
 				write(STDOUT_FILENO, "\n", 1);
-			}
 			return (position);
 		}
+		idx++;
 
 		buffer = split_token(input);
 		if (buffer == NULL)
-		{
 			continue;
-		}
 
-		position = _implement(buffer, av);
+		if (is_builtin(buffer[0]))
+			handle_builtin(buffer, av, &position, idx);
+		else
+			position = _implement(buffer, av, idx);
 
 	}
 }

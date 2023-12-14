@@ -7,7 +7,7 @@
  *
  * Return: path value or NULL
  */
-char *getenv(char *name)
+char *_getenv(char *name)
 {
 	int a = 0;
 	char *dup, *ptr, *val;

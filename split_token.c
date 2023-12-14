@@ -10,24 +10,15 @@
 char **split_token(char *input)
 {
 	int count = 0, a = 0;
-	char *tokens = NULL, *dup = NULL;
-	char **buffer = NULL;
+	char *tokens = NULL, *dup = NULL, **buffer = NULL;
 
 	if (!input)
 		return (NULL);
 	dup = _strdup(input);
 	tokens = strtok(dup, DELIM);
-	/*if (tokens == NULL)
-	{
-		free(input), input = NULL;
-		free(dup);
-		dup = NULL;
-		return (NULL);
-	}*/
 	while (tokens)
 	{
 		count++;
-		/*count = count + 1;*/
 		tokens = strtok(NULL, DELIM);
 	}
 	free(dup), dup = NULL;
@@ -49,8 +40,7 @@ char **split_token(char *input)
 				free(buffer[a - 1]);
 				a--;
 			}
-			free(buffer);
-			free(input);
+			free(buffer), free(input);
 			return (NULL);
 		}
 		tokens = strtok(NULL, DELIM);

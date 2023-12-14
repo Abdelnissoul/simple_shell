@@ -4,6 +4,8 @@
  * _implement - it will execute the program
  * @buffer: 2D array represent the command line
  * @av: 2d argument vector
+ * @idx: status of command
+ *
  * Return: exit the position
  */
 

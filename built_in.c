@@ -15,7 +15,7 @@ int is_builtin(char *command)
 	int i;
 
 	if (command == NULL || command[0] == '\0')
-                return (0);
+		return (0);
 
 	for (i = 0; builtin[i] != NULL; i++)
 	{
@@ -82,6 +82,7 @@ void exit_shell(char **command, char **av, int *status, int idx)
 		}
 	}
 	free_2d(command);
+	free(index);
 	exit(exit_value);
 }
 

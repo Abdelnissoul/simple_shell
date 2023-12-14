@@ -1,6 +1,6 @@
 #include "shell.h"
 
-/*
+/**
  * _strlen - returns the length of a string
  * @str: the string to be checked
  * Return: length of the string, otherwise 0 (F)

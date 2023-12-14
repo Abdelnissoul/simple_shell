@@ -13,9 +13,7 @@ char *get_path(char *input)
 	struct stat st;
 
 	if (!input || !input[0])
-	{
 		return (NULL);
-	}
 	if (strchr(input, '/'))
 	{
 		if (stat(input, &st) == 0)
@@ -24,7 +22,6 @@ char *get_path(char *input)
 		}
 		return (NULL);
 	}
-
 	env_path = _getenv("PATH");
 
 	if (!env_path)
@@ -51,13 +48,3 @@ char *get_path(char *input)
 	free(env_path);
 	return (NULL);
 }
-/*int main(int ac, char **av)
-{
-	char *full_cmd;
-
-	full_cmd = get_path(av[1]);
-	if (full_cmd)
-		printf("%s\n", full_cmd);
-	else
-		printf("does not exist");
-}*/

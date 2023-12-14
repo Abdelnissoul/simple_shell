@@ -21,16 +21,15 @@ int main(int ac, char **av)
 	while (1)
 	{
 		input = read_line();
-		if (!input)
+		if (input == NULL)
 		{
-			if (isatty(STDIN_FILENO) != 0)
+			if (isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "\n", 1);
 			return (position);
 		}
-		idx++;
 
 		buffer = split_token(input);
-		if (buffer == NULL)
+		if (!buffer)
 			continue;
 
 		if (is_builtin(buffer[0]))

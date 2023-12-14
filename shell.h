@@ -12,6 +12,8 @@
 #include <sys/types.h>
 #include <errno.h>
 
+#define DELIM " \n\t"
+
 char *read_line(void);
 char **split_token(char *input);
 int _implement(char **buffer, char **av, int idx);

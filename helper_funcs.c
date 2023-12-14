@@ -12,7 +12,7 @@
 void print_error(char *name, char *cmd, int idx)
 {
 	char *index = _itoa(idx);
-	char msg[] = ": command not found";
+	char msg[] = ": command not found\n";
 
 	write(STDERR_FILENO, name, _strlen(name));
 	write(STDERR_FILENO, ": ", 2);

@@ -13,7 +13,7 @@ int _implement(char **buffer, char **av, int idx)
 	int position;
 	char *full_cmd = get_path(buffer[0]);
 
-	if (full_cmd)
+	if (!full_cmd)
 	{
 		print_error(av[0], buffer[0], idx);
 		free_2d(buffer);

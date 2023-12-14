@@ -14,7 +14,10 @@ int is_builtin(char *command)
 	};
 	int i;
 
-	for (i = 0; builtin[i]; i++)
+	if (command == NULL || command[0] == '\0')
+                return (0);
+
+	for (i = 0; builtin[i] != NULL; i++)
 	{
 		if (strcmp(command, builtin[i]) == 0)
 			return (1);

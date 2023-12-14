@@ -16,37 +16,47 @@ char **split_token(char *input)
 	if (!input)
 		return (NULL);
 	dup = _strdup(input);
-	tokens = strtok(dup, " \t\n");
-	if (tokens == NULL)
+	tokens = strtok(dup, DELIM);
+	/*if (tokens == NULL)
 	{
 		free(input), input = NULL;
 		free(dup);
 		dup = NULL;
 		return (NULL);
-	}
+	}*/
 	while (tokens)
 	{
-		count = count + 1;
-		tokens = strtok(NULL, " \t\n");
+		count++;
+		/*count = count + 1;*/
+		tokens = strtok(NULL, DELIM);
 	}
-	free(dup);
-	dup = NULL;
+	free(dup), dup = NULL;
 
 	buffer = malloc(sizeof(char *) * (count + 1));
 	if (!buffer)
 	{
-		free(input), input = NULL;
+		free(input);
 		return (NULL);
 	}
-	tokens = strtok(input, " \t\n");
+	tokens = strtok(input, DELIM);
 	while (tokens)
 	{
 		buffer[a] = _strdup(tokens);
-		tokens = strtok(NULL, " \t\n");
-		a = a + 1;
+		if (!buffer[a])
+		{
+			while (a > 0)
+			{
+				free(buffer[a - 1]);
+				a--;
+			}
+			free(buffer);
+			free(input);
+			return (NULL);
+		}
+		tokens = strtok(NULL, DELIM);
+		a++;
 	}
 	free(input);
-	input = NULL;
 	buffer[a] = NULL;
 	return (buffer);
 }

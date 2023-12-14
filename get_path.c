@@ -10,17 +10,19 @@
 char *get_path(char *input)
 {
 	char *env_path, *full_cmd, *dir;
-	int i;
 	struct stat st;
 
-	for (i = 0; input[i]; i++)
+	if (!input || !input[0])
 	{
-		if (input[i] == '/')
+		return (NULL);
+	}
+	if (strchr(input, '/'))
+	{
+		if (stat(input, &st) == 0)
 		{
-			if (stat(input, &st) == 0)
-				return (_strdup(input));
-			return (NULL);
+			return (_strdup(input));
 		}
+		return (NULL);
 	}
 
 	env_path = _getenv("PATH");
@@ -42,10 +44,20 @@ char *get_path(char *input)
 				free(env_path);
 				return (full_cmd);
 			}
-			free(full_cmd), full_cmd = NULL;
-			dir = strtok(NULL, ":");
+			free(full_cmd);
 		}
+		dir = strtok(NULL, ":");
 	}
 	free(env_path);
 	return (NULL);
 }
+/*int main(int ac, char **av)
+{
+	char *full_cmd;
+
+	full_cmd = get_path(av[1]);
+	if (full_cmd)
+		printf("%s\n", full_cmd);
+	else
+		printf("does not exist");
+}*/

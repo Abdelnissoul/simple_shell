@@ -1,5 +1,14 @@
 #include "shell.h"
 
+/**
+ * print_error - prints error message
+ * @name: name or identifier of error
+ * @cmd: command associated with error
+ * @idx: index of command within sequence
+ *
+ * Return: index
+ */
+
 void print_error(char *name, char *cmd, int idx)
 {
 	char *index = _itoa(idx);
@@ -14,6 +23,14 @@ void print_error(char *name, char *cmd, int idx)
 
 	free(index);
 }
+
+/**
+ * reverse_string - reverses a string of characters
+ * @str: string to be reversed
+ * @len: length of the string
+ *
+ * Return: void
+ */
 
 void reverse_string(char *str, int len)
 {
@@ -30,6 +47,13 @@ void reverse_string(char *str, int len)
 		end--;
 	}
 }
+
+/**
+ * _itoa - converts integer to string value
+ * @n: value that needs to be converted
+ *
+ * Return: pointer to a string containing ASCII representation of n
+ */
 
 char *_itoa(int n)
 {
@@ -51,6 +75,13 @@ char *_itoa(int n)
 	return (_strdup(buffer));
 }
 
+/**
+ * is_positive_number - determines if a given string is positive
+ * @str: input string
+ *
+ * Return: 1 if positive, 0 otherwise
+ */
+
 int is_positive_number(char *str)
 {
 	int i;
@@ -65,6 +96,13 @@ int is_positive_number(char *str)
 	}
 	return (1);
 }
+
+/**
+ * _atoi - converts string representation to int value
+ * @str: input string
+ *
+ * Return: integer value of string
+ */
 
 int _atoi(char *str)
 {

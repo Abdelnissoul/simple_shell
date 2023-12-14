@@ -16,7 +16,7 @@ char *read_line(void);
 char **split_token(char *input);
 int _implement(char **buffer, char **av, int idx);
 char *get_path(char *input);
-char *_getenv(char *variable);
+char *_getenv(char *name);
 
 /* environ for execve */
 extern char **environ;

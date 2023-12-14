@@ -10,7 +10,7 @@
 int _implement(char **buffer, char **av, int idx)
 {
 	pid_t fork_child;
-	int position, exit_position;
+	int position;
 	char *full_cmd = get_path(buffer[0]);
 
 	if (full_cmd)
@@ -32,6 +32,6 @@ int _implement(char **buffer, char **av, int idx)
 	{
 		waitpid(fork_child, &position, 0);
 		free_2d(buffer), free(full_cmd);
-		return (WEXITSTATUS(position));
 	}
+	return (WEXITSTATUS(position));
 }

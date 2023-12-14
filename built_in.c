@@ -100,7 +100,9 @@ void print_env(char **command, int *status)
 
 	for (i = 0; environ[i]; i++)
 	{
-		write(STDOUT_FILENO, command[i], _strlen(command[i]));
+		size_t len = strlen(environ[i]);
+
+		write(STDOUT_FILENO, environ[i], len);
 		write(STDOUT_FILENO, "\n", 1);
 	}
 	free_2d(command);

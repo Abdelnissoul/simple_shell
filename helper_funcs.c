@@ -2,9 +2,8 @@
 
 void print_error(char *name, char *cmd, int idx)
 {
-	char *index, msg[] = ": not found";
-
-	index = _itoa(idx);
+	char *index = _itoa(idx);
+	char msg[] = ": command not found";
 
 	write(STDERR_FILENO, name, _strlen(name));
 	write(STDERR_FILENO, ": ", 2);
